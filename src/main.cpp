@@ -9,12 +9,13 @@
 #include <Adafruit_MPR121.h>
 #include <CapacitiveSensor.h>
 #include <PushButton.h>
-#include <RtcDateTime.h>
-#include <RtcDS3231.h>
+//#include <RtcDateTime.h>
+//#include <RtcDS3231.h>
 #include <WiFiManager.h>
 #include <WebSocketsServer.h>
 #include <WString.h>
 #include <cstdint>
+
 
 #include "OTA.h"
 struct{
@@ -28,7 +29,7 @@ OTA ota = OTA();
 #define DEBUG_ESP_WIFI 1
 #define DEBUG_ESP_PORT 1
 const uint8_t RESET_BUTTON = 0;
-RtcDS3231 rtc;
+//RtcDS3231 rtc;
 //const uint8_t
 PushButton button = PushButton(RESET_BUTTON);
 NTPClient timeClient;
@@ -42,10 +43,10 @@ void setup() {
 	Serial.print("IP address: ");
 	Serial.println(WiFi.localIP());
 	button.onHold(1500, doReconfig);
-	rtc.Begin();
+//	rtc.Begin();
 	timeClient.forceUpdate();
 	timeClient.getFormattedTime();
-	rtc.SetDateTime(RtcDateTime());
+//	rtc.SetDateTime(RtcDateTime());
 }
 void doReconfig(Button& btn, uint16_t duration) {
 	WiFiManager wifiManager;
@@ -68,5 +69,4 @@ void doReconfig(Button& btn, uint16_t duration) {
 void loop() {
 	ota.loop();
 	timeClient.update();
-    digitalWrite()
 }

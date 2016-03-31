@@ -1,0 +1,9 @@
+[submodule "lib/Adafruit_MPR121_Library"]
+	path = lib/Adafruit_MPR121_Library
+	url = https://github.com/adafruit/Adafruit_MPR121_Library
+[submodule "lib/CapacitiveSensor"]
+	path = lib/CapacitiveSensor
+	url = https://github.com/PaulStoffregen/CapacitiveSensor
+[submodule "lib/Bounce-Arduino-Wiring"]
+	path = lib/Bounce-Arduino-Wiring
+	url = https://github.com/thomasfredericks/Bounce-Arduino-Wiring
